@@ -1,0 +1,81 @@
+@keyframes fadeIn {   0% { opacity: 0; }   100% { opacity: 1; } }
+@keyframes fadeOut {   0% { opacity: 100; }   100% { opacity: 0; } }
+
+.page-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+	background-color: #000;
+	height: 50px;
+}
+
+.page-body {
+	height: calc(100vh - 50px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.page-boxes-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+		padding: 32px;
+		height: calc(100vh - 50px);
+		transition: 1s;
+
+		.new-bill-box {
+			animation: fadeIn 1s;
+			width: 380px;
+			background-color: #f3f3f3;
+			border-radius: 6px;
+			display: flex;
+			flex-direction: row;
+			gap: 16px;
+			padding: 20px;
+			transition: height 1s;
+			max-height: 270px;
+
+			.box-icon-container {
+				width: 52px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.box-text {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				gap: 5px; 
+				.box-textfield-container {
+					display: flex;
+					justify-content: space-between;
+					width: 100%;
+					gap: 8px;
+				}
+				.new-bill-form-container {
+					animation: fadeIn 1s;
+				}
+				.box-standalone-button-container{
+					display: flex;
+					justify-content: flex-end;
+					width: 100%;
+					.button-container{
+						width: 78px;
+						transition: 0.5s;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.page-boxes-container {
+		flex-direction: column;
+		.new-bill-box {
+			width: 100%;
+		}
+	}
+}
